@@ -10,10 +10,9 @@ router
   .get('/', (_req, res) => res.status(200).send(myths))
   .get('/:id', (req, res) => {
     const id: number = +req.params.id;
-    _.each(myths, (item, i) => {
-      if (item.id == id) return res.status(200).send(myths[i]);
-    });
+    const myth = myths.find((obj) => obj.id === id);
 
+    if (myth) return res.status(200).send(myth);
     if (id <= 0) return res.status(500).redirect('/v1/myths/1');
     if (id >= 9) return res.status(500).redirect('/v1/myths/8');
   })

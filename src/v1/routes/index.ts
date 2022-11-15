@@ -16,6 +16,13 @@ router
     if (id <= 0) return res.status(500).redirect('/v1/myths/1');
     if (id >= 9) return res.status(500).redirect('/v1/myths/8');
   })
+  .get('/name/:name', (req, res) => {
+    const name: string = req.params.name;
+    const myth = myths.filter((obj) => obj.name.includes(name));
+
+    if (myth.length > 0) return res.status(200).send(myth);
+    return res.status(404).send({ error: 'Sorry, cant find that' });
+  })
   .post('/', (req, res) => {
     const { name, description, image } = req.body;
     if (name && description && image) {

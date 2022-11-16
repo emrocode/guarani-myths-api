@@ -1,6 +1,6 @@
 import express from 'express';
 import _ from 'underscore';
-import mythsData from '../../json/data.json';
+import mythsData from '../../json/db.json';
 import { Response } from '../../types';
 
 const router = express.Router();
@@ -10,7 +10,7 @@ router
   .get('/', (_req, res) => res.status(200).send(myths))
   .get('/:id', (req, res) => {
     const id: number = +req.params.id;
-    const myth = myths.find((obj) => obj.id === id);
+    const myth = myths.find(obj => obj.id === id);
 
     if (myth) return res.status(200).send(myth);
     if (id <= 0) return res.status(500).redirect('/v1/myths/1');
@@ -18,7 +18,7 @@ router
   })
   .get('/name/:name', (req, res) => {
     const name: string = req.params.name;
-    const myth = myths.filter((obj) => obj.name.includes(name));
+    const myth = myths.filter(obj => obj.name.includes(name));
 
     if (myth.length > 0) return res.status(200).send(myth);
     return res.status(404).send({ error: 'Sorry, cant find that' });

@@ -18,7 +18,7 @@ router
   })
   .get('/name/:name', (req, res) => {
     const name: string = req.params.name;
-    const myth = myths.filter(obj => obj.name.includes(name));
+    const myth = myths.filter(obj => obj.name.toLowerCase().includes(name));
 
     if (myth.length > 0) return res.status(200).send(myth);
     return res.status(404).send({ error: 'Sorry, cant find that' });

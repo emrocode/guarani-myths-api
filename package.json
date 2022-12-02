@@ -11,10 +11,7 @@
     "prettier": "npx prettier --write src/**/*"
   },
   "keywords": [],
-  "author": {
-    "name": "Emilio Romero",
-    "email": "emrocode@gmail.com"
-  },
+  "author": "Emilio Romero <emrocode@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.12",

@@ -1,5 +1,5 @@
 # Guaraní Myths
-Free REST API to practice and prototyping.
+Free REST API to practice and prototyping
 
 ## Features
 - HTTPS
@@ -7,4 +7,4 @@ Free REST API to practice and prototyping.
 - [Report an issue](https://github.com/emrocode/guarani-myths-api/issues)
 
 ## Examples
-You can see an example [here](https://codepen.io/emrocode/pen/xxzreJW).
+You can see an example in [codepen](https://codepen.io/emrocode/pen/xxzreJW)

@@ -15,7 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.13",
-    "@types/express": "^4.17.14",
+    "@types/express": "^4.17.15",
     "@types/underscore": "^1.11.4",
     "prettier": "^2.8.1",
     "ts-node": "^10.9.1",

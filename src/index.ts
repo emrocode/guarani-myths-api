@@ -15,7 +15,7 @@ app
   .use('/v1/myths', router)
   .set('json spaces', 2)
   .get('/', (_req, res) =>
-    res.status(200).redirect('/v1/myths')
+    res.sendFile(path.join(__dirname) + 'assets/index.html')
   );
 
 const server = createServer(app);

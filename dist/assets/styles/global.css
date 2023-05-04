@@ -1,0 +1,44 @@
+*,
+::after,
+::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --black-100: #454e4f;
+  --black-200: #252e2f;
+  --brown-100: #422623;
+  --brown-200: #5c3530;
+  --brown-300: #b87333;
+  --white-100: #fefefe;
+  --white-200: #f2f5f5;
+  --mono: 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Lucida Console', monospace;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--mono);
+  text-rendering: optimizeLegibility;
+  color: var(--black-200);
+  background-color: var(--white-100);
+}
+
+.container {
+  max-width: 40rem;
+  width: 90%;
+  height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  row-gap: 1.25rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-link {
+  color: var(--brown-200);
+  text-decoration: underline;
+}

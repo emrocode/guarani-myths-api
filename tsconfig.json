@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDir": "./src/",
-    "resolveJsonModule": true,                           /* Enable importing .json files. */
+    "target": "es6",
+    "module": "commonjs",
+    "resolveJsonModule": true,
     "outDir": "./dist/",
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    "noUnusedLocals": true,                              /* Enable error reporting when local variables aren't read. */
-    "noUnusedParameters": true,                          /* Raise an error when a function parameter isn't read. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "api/*.ts"]
 }

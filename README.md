@@ -3,7 +3,7 @@ Free REST API to practice and prototyping
 
 ## Example
 ```js
-fetch('https://guarani.vercel.app/v1/myths/1')
+fetch('https://guarani-myths-api.vercel.app/v1/myths/1')
   .then(res => res.json())
   .then(data => console.log(data))
 ```
@@ -14,7 +14,7 @@ fetch('https://guarani.vercel.app/v1/myths/1')
   "id": 1,
   "name": "Taú and Keraná",
   "description": "This causes deep sadness and...",
-  "image": "https://guarani.vercel.app/images/...",
+  "image": "https://guarani-myths-api.vercel.app/images/...",
 }
 ```
 

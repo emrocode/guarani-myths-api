@@ -2,28 +2,40 @@
   "name": "guarani-myths-api",
   "version": "1.0.0",
   "description": "Guaraní Mythology REST API",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
+  "source": "frontend/index.pug",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev": "npx ts-node src/index.ts",
-    "build": "npx tsc --build",
-    "start": "node dist/index.js",
-    "prettier": "npx prettier --write src/**/*"
+    "dev:backend": "npx ts-node backend/index.ts",
+    "start:backend": "node dist/api/index.js",
+    "start:frontend": "parcel",
+    "build:backend": "npx tsc --build",
+    "build:frontend": "parcel build",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\"",
+    "prettier": "npx prettier --write backend/**/* frontend/**/*"
   },
   "keywords": [],
   "author": "Emilio Romero <emrocode@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@parcel/transformer-pug": "^2.12.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/underscore": "^1.11.15",
+    "parcel": "^2.12.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^3.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "underscore": "^1.13.6"
+  },
+  "staticFiles": {
+    "staticPath": "frontend/public",
+    "distDir": "dist"
   }
 }

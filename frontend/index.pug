@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+    link(rel="stylesheet", href="css/global.css")
+    title Guaraní Mythology &horbar; Simple REST API
+  body
+    main
+      .container
+        .hero
+          h1.title guaraní myths&nbsp;
+            span api
+          p.paragraph Free REST API to practice and prototyping.
+          p.paragraph
+            | Explore details in the&nbsp;
+            a(
+              href="https://github.com/emrocode/guarani-myths-api#readme",
+              target="_blank",
+              rel="noopener noreferrer",
+              class="link"
+            )
+              | README
+          .code-container
+            .code
+              pre
+                code.
+                  curl https://warani.vercel.app/api/v1/myths
+            button.button(id="btn", onclick="copyCode()")
+              span(id="btnText") Copy
+        footer.footer
+          p
+            | Guaraní Myths API &lpar;
+            span #{currentYear}
+            | &rpar; Retrieved
+            | from&nbsp;
+            a(
+              href="https://www.yaguaron.gov.py/mitos-del-paraguay/",
+              target="_blank",
+              rel="noopener noreferrer",
+              class="link"
+            )
+              | Municipality of Yaguarón
+            | &period;&nbsp;Coded by&nbsp;
+            a(
+              href=author.github,
+              target="_blank",
+              rel="noopener noreferrer",
+              class="link"
+            )
+              | #{author.name}
+            | &nbsp;and deployed with&nbsp;
+            a(
+              href=platform.homepage,
+              target="_blank",
+              rel="noopener noreferrer",
+              class="link"
+            )
+              | #{platform.name}
+        script.
+          function copyCode() {
+              const code = document.querySelector('code');
+              const range = document.createRange();
+              range.selectNode(code);
+              window.getSelection().removeAllRanges();
+              window.getSelection().addRange(range);
+              document.execCommand('copy');
+              window.getSelection().removeAllRanges();
+              changeText();
+          }
+
+          function changeText() {
+            document.getElementById('btnText').innerText = 'Copied!';
+            document.getElementById('btn').style.backgroundColor = '#5c3530';
+            setTimeout(() => {
+              document.getElementById('btnText').innerText = 'Copy';
+              document.getElementById('btn').style.backgroundColor = '#422623';
+            }, 800);
+          }

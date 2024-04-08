@@ -1,0 +1,13 @@
+{
+  "locals": {
+    "author": {
+      "name": "Emilio Romero",
+      "github": "https://github.com/emrocode"
+    },
+    "platform": {
+      "name": "Vercel",
+      "homepage": "https://vercel.com"
+    },
+    "currentYear": "2024"
+  }
+}

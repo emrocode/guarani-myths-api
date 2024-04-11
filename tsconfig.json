@@ -11,5 +11,5 @@
     "noUnusedParameters": true,
     "skipLibCheck": true
   },
-  "include": ["backend/**/*.ts", "api/*.ts"]
+  "include": ["api/**/*.ts"]
 }

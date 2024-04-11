@@ -2,7 +2,7 @@
   "name": "guarani-myths-api",
   "version": "1.0.0",
   "description": "Guaraní Mythology REST API",
-  "source": "frontend/index.pug",
+  "source": "src/index.pug",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "dev:backend": "npx ts-node backend/index.ts",
@@ -10,7 +10,7 @@
     "start:frontend": "parcel",
     "build:backend": "npx tsc --build",
     "build:frontend": "parcel build",
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start": "npm run start:backend",
     "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\"",
     "prettier": "npx prettier --write backend/**/* frontend/**/*"
   },
@@ -35,7 +35,7 @@
     "underscore": "^1.13.6"
   },
   "staticFiles": {
-    "staticPath": "frontend/public",
+    "staticPath": "src/public",
     "distDir": "dist"
   }
 }

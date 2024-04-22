@@ -1,9 +1,9 @@
 # Guaraní Myths
-Free REST API to practice and prototyping
+Explore Guaraní myths through an API. Perfect for practice and simple prototyping.
 
 ## Example
 ```js
-fetch('https://warani.vercel.app/v1/myths/1')
+fetch("https://warani.vercel.app/api/v1/myths/1")
   .then(res => res.json())
   .then(data => console.log(data))
 ```

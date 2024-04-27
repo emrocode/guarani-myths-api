@@ -1,5 +1,5 @@
 # Guaraní Myths
-Explore Guaraní myths through an API. Perfect for practice and simple prototyping.
+Explore Guaraní myths through an API
 
 ## Example
 ```js

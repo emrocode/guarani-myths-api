@@ -35,6 +35,7 @@ a {
 
   &:is(.link) {
     text-decoration: underline;
+    word-break: break-all;
     color: var(--brown-200);
   }
 }
@@ -50,7 +51,6 @@ p,
 }
 
 .container {
-  position: relative;
   max-width: var(--max-w);
   width: 90%;
   height: 100dvh;
@@ -69,7 +69,7 @@ p,
 }
 
 .title {
-  font-size: clamp(1.25rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1.25rem, 4vw + 1rem, 2.75rem);
   text-transform: capitalize;
   letter-spacing: -0.025em;
   margin-bottom: 0.25rem;

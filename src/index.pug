@@ -7,6 +7,7 @@ html(lang="en")
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
     link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+    link(rel="icon", type="image/x-icon", href="public/favicon.ico")
     link(rel="stylesheet", href="css/global.css")
     title Guaraní Myths &ndash; Simple API
   body
@@ -16,14 +17,19 @@ html(lang="en")
           h1.title guaraní myths&nbsp;
             span api
           p.paragraph Free API to practice and prototyping.
-          p.paragraph
-            | Explore details in the&nbsp;
+            | &nbsp;Explore details in the&nbsp;
             a.link(
               href="https://github.com/emrocode/guarani-myths-api#readme",
               target="_blank",
               rel="noopener noreferrer"
             )
               | README
+            | &nbsp;or visit the base url&colon;&nbsp;
+            a.link(href="https://warani.vercel.app/api/v1/myths",
+              target="_blank",
+              rel="noopener noreferrer"
+            )
+              | ~/api/v1/myths
         footer.footer
           p
             | Guaraní Myths API &lpar;

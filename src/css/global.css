@@ -69,7 +69,7 @@ p,
 }
 
 .title {
-  font-size: clamp(1.25rem, 4vw + 1rem, 2.75rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-transform: capitalize;
   letter-spacing: -0.025em;
   margin-bottom: 0.25rem;

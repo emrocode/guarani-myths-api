@@ -9,27 +9,27 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
     link(rel="icon", type="image/x-icon", href="public/favicon.ico")
     link(rel="stylesheet", href="css/global.css")
-    title Guaraní Myths &ndash; Simple API
+    title Guaraní Myths &ndash; Simple REST API
   body
     main
       .container
         .hero
-          h1.title guaraní myths&nbsp;
-            span api
-          p.paragraph Free API to practice and prototyping.
-            | &nbsp;Explore details in the&nbsp;
+          h1.title guaraní myths API
+          p.paragraph Free REST API to practice and prototyping.
+          p.paragraph Explore details in the&nbsp;
             a.link(
               href="https://github.com/emrocode/guarani-myths-api#readme",
               target="_blank",
               rel="noopener noreferrer"
             )
               | README
-            | &nbsp;or visit the base url&colon;&nbsp;
-            a.link(href="https://warani.vercel.app/api/v1/myths",
+            | &period;
+          p.paragraph BaseUrl&colon;&nbsp;
+            a.link(href="https://warani.vercel.app/api/v1/myths/",
               target="_blank",
               rel="noopener noreferrer"
             )
-              | ~/api/v1/myths
+              | ~/api/v1/myths/
         footer.footer
           p
             | Guaraní Myths API &lpar;
@@ -42,7 +42,9 @@ html(lang="en")
               rel="noopener noreferrer"
             )
               | Municipality of Yaguarón
-            | &period;&nbsp;Coded by&nbsp;
+            | &period;&nbsp;
+          p
+            | Coded by&nbsp;
             a.link(
               href=author.github,
               target="_blank",
@@ -56,3 +58,4 @@ html(lang="en")
               rel="noopener noreferrer"
             )
               | #{platform.name}
+            | &period;

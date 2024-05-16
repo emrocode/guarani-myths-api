@@ -6,7 +6,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "dev:backend": "npx ts-node backend/index.ts",
-    "start:backend": "node dist/api/index.js",
+    "start:backend": "node dist/index.js",
     "start:frontend": "parcel",
     "build:backend": "npx tsc --build",
     "build:frontend": "parcel build",

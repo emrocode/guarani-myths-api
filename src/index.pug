@@ -4,58 +4,9 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width,initial-scale=1")
-    link(rel="preconnect", href="https://fonts.googleapis.com")
-    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
     link(rel="icon", type="image/x-icon", href="public/favicon.ico")
-    link(rel="stylesheet", href="css/global.css")
     title Guaraní Myths &ndash; Simple REST API
   body
     main
-      .container
-        .hero
-          h1.title guaraní myths API
-          p.paragraph Free REST API to practice and prototyping.
-          p.paragraph Explore details in the&nbsp;
-            a.link(
-              href="https://github.com/emrocode/guarani-myths-api#readme",
-              target="_blank",
-              rel="noopener noreferrer"
-            )
-              | README
-            | &period;
-          p.paragraph BaseUrl&colon;&nbsp;
-            a.link(href="https://warani.vercel.app/api/v1/myths/",
-              target="_blank",
-              rel="noopener noreferrer"
-            )
-              | ~/api/v1/myths/
-        footer.footer
-          p
-            | Guaraní Myths API &lpar;
-            span #{currentYear}
-            | &rpar; Retrieved
-            | from&nbsp;
-            a.link(
-              href="https://www.yaguaron.gov.py/mitos-del-paraguay/",
-              target="_blank",
-              rel="noopener noreferrer"
-            )
-              | Municipality of Yaguarón
-            | &period;&nbsp;
-          p
-            | Coded by&nbsp;
-            a.link(
-              href=author.github,
-              target="_blank",
-              rel="noopener noreferrer"
-            )
-              | #{author.name}
-            | &nbsp;and deployed with&nbsp;
-            a.link(
-              href=platform.homepage,
-              target="_blank",
-              rel="noopener noreferrer"
-            )
-              | #{platform.name}
-            | &period;
+      a(href="https://warani.vercel.app/api/v1/myths")
+        | #{"~/api/v1/myths"}

@@ -5,14 +5,14 @@
   "source": "src/index.pug",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev:backend": "npx ts-node backend/index.ts",
+    "dev:backend": "npx ts-node api/index.ts",
     "start:backend": "node dist/index.js",
     "start:frontend": "parcel",
     "build:backend": "npx tsc --build",
     "build:frontend": "parcel build",
     "start": "npm run start:backend",
     "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\"",
-    "prettier": "npx prettier --write backend/**/* frontend/**/*"
+    "prettier": "npx prettier --write api/**/*"
   },
   "keywords": [],
   "author": "Emilio Romero <emrocode@gmail.com>",
@@ -29,6 +29,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@unkey/api": "^0.20.7",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",

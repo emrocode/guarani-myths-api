@@ -25,7 +25,8 @@ router
     );
 
     if (myth.length > 0) return res.status(200).send(myth);
-    return res.status(404).send({ error: "Sorry, can't find that" });
+    // prettier-ignore
+    return res.status(404).send({ error: 'Sorry, can\'t find that' });
   })
   .post('/', auth, (req: Request, res: Response) => {
     const { name, description, image } = req.body;
@@ -36,7 +37,7 @@ router
       myths.push(newData);
       return res.send(myths);
     } else {
-      return res.status(500).send('Bad request');
+      return res.status(500).send({ error: 'Bad request' });
     }
   })
   .put('/:id', auth, (req: Request, res: Response) => {
@@ -66,7 +67,9 @@ router
     _.each(myths, (item, i) => {
       if (item.id === id) {
         myths.splice(i, 1);
-        return res.status(200).send(`Item ${id} has been deleted`);
+        return res.status(200).send({
+          success: `Item ${id} has been deleted`,
+        });
       }
     });
     return res.status(200).send(myths);

@@ -16,6 +16,5 @@ app
     })
   )
   .use('/api/v1/myths', router)
-  .set('json spaces', 2);
 
 module.exports = app;

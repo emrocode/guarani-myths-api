@@ -20,6 +20,6 @@
     "@unkey/api": "^0.20.7",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "underscore": "^1.13.6"
+    "underscore": "^1.13.7"
   }
 }

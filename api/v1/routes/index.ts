@@ -1,9 +1,9 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { type Request, Response, NextFunction } from 'express';
 import { withAuth as auth } from '../../middleware';
+import { sanitizeString } from '../../utils';
 import _ from 'underscore';
 import mythsData from '../../json/db.json';
-import { sanitizeString } from '../../utils';
-import { Myths } from '../../types';
+import { type Myths } from '../../types';
 
 const router = express.Router();
 const myths: Array<Myths> = mythsData;
@@ -14,9 +14,9 @@ router
     const id: number = +req.params.id;
     const myth = myths.find(obj => obj.id === id);
 
-    if (myth) return res.status(200).send(myth);
     if (id <= 0) return res.status(500).redirect('/api/v1/myths/1');
     if (id >= 9) return res.status(500).redirect('/api/v1/myths/8');
+    if (myth) return res.status(200).send(myth);
   })
   .get('/name/:name', (req: Request, res: Response) => {
     const name: string = req.params.name;
@@ -25,8 +25,7 @@ router
     );
 
     if (myth.length > 0) return res.status(200).send(myth);
-    // prettier-ignore
-    return res.status(404).send({ error: 'Sorry, can\'t find that' });
+    return res.status(404).send({ error: 'No myth has been found' });
   })
   .post('/', auth, (req: Request, res: Response) => {
     const { name, description, image } = req.body;
@@ -35,9 +34,9 @@ router
       const id = myths.length + 1;
       const newData = { id, ...req.body };
       myths.push(newData);
-      return res.send(myths);
+      return res.status(201).send(myths);
     } else {
-      return res.status(500).send({ error: 'Bad request' });
+      return res.status(400).send({ error: 'Missing required fields' });
     }
   })
   .put('/:id', auth, (req: Request, res: Response) => {

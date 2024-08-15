@@ -1,12 +1,14 @@
 import express, { Application } from 'express';
+import helmet from 'helmet';
 import cors from 'cors';
-import router from './v1/routes';
+import v1Router from './v1/routes';
 
 const app: Application = express();
 
 app
   .use(express.urlencoded({ extended: false }))
   .use(express.json())
+  .use(helmet())
   .use(
     cors({
       origin: '*',
@@ -15,6 +17,6 @@ app
       maxAge: 3600,
     })
   )
-  .use('/api/v1/myths', router)
+  .use('/api/v1/myths', v1Router);
 
 module.exports = app;

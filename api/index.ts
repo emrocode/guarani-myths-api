@@ -19,4 +19,4 @@ app
   )
   .use('/api/v1/myths', v1Router);
 
-module.exports = app;
+export default app;

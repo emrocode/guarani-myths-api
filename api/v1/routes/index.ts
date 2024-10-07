@@ -1,9 +1,9 @@
-import express, { type Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import { withAuth as auth } from '../../middleware';
 import { sanitizeString } from '../../utils';
 import _ from 'underscore';
 import mythsData from '../../json/db.json';
-import { type Myths } from '../../types';
+import { Myths } from '../../types';
 
 const router = express.Router();
 const myths: Array<Myths> = mythsData;
@@ -47,7 +47,7 @@ router
       return res.status(404).send({ error: 'Invalid ID' });
     }
 
-    if (!name || !description || !image) {
+    if (!(name || description || image)) {
       return res.status(400).send({ error: 'Missing required fields' });
     }
 

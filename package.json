@@ -22,7 +22,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "helmet": "^8.0.0",
-    "mongoose": "^8.7.0",
+    "mongoose": "^8.8.3",
     "underscore": "^1.13.7"
   }
 }

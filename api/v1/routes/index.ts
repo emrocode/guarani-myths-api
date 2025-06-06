@@ -16,7 +16,7 @@ router
 
     if (id <= 0) return res.status(500).redirect('/api/v1/myths/1');
     if (id >= 9) return res.status(500).redirect('/api/v1/myths/8');
-    if (myth) return res.status(200).send(myth);
+    if (myth) res.status(200).send(myth);
   })
   .get('/name/:name', (req: Request, res: Response) => {
     const name: string = req.params.name;

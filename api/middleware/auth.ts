@@ -2,22 +2,16 @@ import { Request, Response, NextFunction } from 'express';
 import { verifyKey } from '@unkey/api';
 
 const withAuth = async (req: Request, res: Response, next: NextFunction) => {
-  const key = req.headers['authorization']?.split(' ').at(1);
+  const authHeader = req.headers['authorization'];
+  const key = authHeader?.toString().replace('Bearer ', '');
+  const apiId = process.env.UNKEY_API_ID ?? '';
 
-  if (!key) {
-    res.status(401).send({
-      error: 'Unauthorized: Missing API key',
-    });
-    return;
-  }
+  if (!key) return res.status(401).send({ error: 'Unauthorized' });
 
   try {
-    const { result } = await verifyKey(key);
+    const { result } = await verifyKey({ key, apiId });
 
-    if (!result?.valid) {
-      res.status(401).send({ error: 'Unauthorized: Invalid API key' });
-      return;
-    }
+    if (!result?.valid) return res.status(401).send({ error: 'Unauthorized' });
 
     next();
   } catch (error) {

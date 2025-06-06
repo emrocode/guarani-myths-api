@@ -21,7 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
-    "helmet": "^8.0.0",
+    "helmet": "^8.1.0",
     "mongoose": "^8.15.1",
     "underscore": "^1.13.7"
   }

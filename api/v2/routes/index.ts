@@ -10,13 +10,16 @@ router.get('/', async (req: Request, res: Response) => {
   const Myth = getMythModel(collectionName);
 
   try {
-    const data = id ? await Myth.find({ id: id }) : await Myth.find();
+    const data = id
+      ? await Myth.find({ id: id }).select('-_id')
+      : await Myth.find().select('-_id').sort({ id: 1 });
 
     if (!id) return res.status(200).json(data);
-    return res.status(200).json(data);
+
+    res.status(200).json(data);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: 'Error fetching myths' });
+    res.status(500).json({ error: 'Error fetching myths' });
   }
 });
 

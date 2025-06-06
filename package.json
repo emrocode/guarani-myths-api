@@ -4,7 +4,7 @@
   "description": "Guaraní Mythology REST API",
   "scripts": {
     "start": "node api/index.ts",
-    "prettier": "prettier --write api/**/*"
+    "format": "prettier api/**/* --write"
   },
   "keywords": [],
   "author": "Emilio Romero <emrocode@gmail.com>",

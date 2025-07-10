@@ -8,7 +8,12 @@
       name="description"
       content="Explora la mitología Guaraní: API con los siete monstruos legendarios, su historia e imágenes."
     />
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <link rel="shortcut icon" href="/assets/gmyths.png" type="image/png" />
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
     <script>
       window.va =
         window.va ||
@@ -32,6 +37,7 @@
       </center>
     </header>
     <main>
+      <blockquote id="element"></blockquote>
       <h3>Para empezar</h3>
       <p>
         La url base contiene información sobre todos los recursos disponibles de
@@ -71,7 +77,7 @@
     </main>
     <footer>
       <p>
-        Guaraní Myths API es un proyecto de
+        <code>Guaraní Myths API</code> es un proyecto de
         <a
           href="https://github.com/emrocode"
           target="_blank"
@@ -81,5 +87,34 @@
         y está bajo la licencia MIT.
       </p>
     </footer>
+    <script>
+      (async function fetchMyths() {
+        const containerEl = document.getElementById("element");
+        containerEl.innerHTML =
+          "<center><mark>Obteniendo historia principal...</mark></center>";
+
+        try {
+          const res = await fetch("/api/myths/1?lang=es");
+
+          if (!res.ok)
+            throw new Error(
+              `Error ${res.status}: No se pudo cargar la historia`,
+            );
+
+          const data = await res.json();
+          containerEl.innerHTML = "";
+          containerEl.innerHTML = `
+            <center>
+              <img style="aspect-ratio: 1 / 0.5; object-fit: cover; object-position: top;" src=${data.image} />
+            </center>
+            <h3>${data.title}</h3>
+            <p>${data.description}</p>
+          `;
+        } catch (error) {
+          console.error(error);
+          containerEl.innerHTML = `<center><mark style="background-color: red !important;">${error.message}</mark></center>`;
+        }
+      })();
+    </script>
   </body>
 </html>

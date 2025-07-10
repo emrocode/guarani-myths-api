@@ -2,8 +2,6 @@ import redis from "../redis.js";
 import { TTL } from "../_constants/index.js";
 import { mythCollectionSchema, mythByIdSchema } from "../schemas/myths.js";
 
-const DATE_NOW = Date.now();
-
 /**
  * Myths endpoint.\
  * Returns the collection of myths.
@@ -16,8 +14,11 @@ export default async function myths(fastify) {
     try {
       const cached = await redis.get(cacheKey);
 
-      if (cached && DATE_NOW - cached.timestamp < TTL) {
-        return reply.header("X-Cache", "HIT").send(cached.result);
+      if (cached) {
+        return reply
+          .header("X-Cache", "HIT")
+          .header("Cache-Control", `public, s-maxage=${TTL}`)
+          .send(cached);
       }
 
       const collection = fastify.mongo.db.collection("myths");
@@ -33,9 +34,13 @@ export default async function myths(fastify) {
         description: myth.translations?.[lang].description,
       }));
 
-      await redis.setex(cacheKey, TTL, JSON.stringify({ result }));
+      await redis.setex(cacheKey, TTL, result);
 
-      reply.code(200).send(result);
+      reply
+        .code(200)
+        .header("X-Cache", "MISS")
+        .header("Cache-Control", `public, s-maxage=${TTL}`)
+        .send(result);
     } catch (error) {
       console.error(error);
       reply.status(500).send({
@@ -55,8 +60,11 @@ export default async function myths(fastify) {
     try {
       const cached = await redis.get(cacheKey);
 
-      if (cached && DATE_NOW - cached.timestamp < TTL) {
-        return reply.header("X-Cache", "HIT").send(cached.result);
+      if (cached) {
+        return reply
+          .header("X-Cache", "HIT")
+          .header("Cache-Control", `public, s-maxage=${TTL}`)
+          .send(cached);
       }
 
       const collection = fastify.mongo.db.collection("myths");
@@ -78,9 +86,13 @@ export default async function myths(fastify) {
         description: myth.translations?.[lang]?.description,
       };
 
-      await redis.setex(cacheKey, TTL, JSON.stringify({ result }));
+      await redis.setex(cacheKey, TTL, result);
 
-      reply.code(200).send(result);
+      reply
+        .code(200)
+        .header("X-Cache", "MISS")
+        .header("Cache-Control", `public, s-maxage=${TTL}`)
+        .send(result);
     } catch (error) {
       console.error(error);
       reply.status(500).send({

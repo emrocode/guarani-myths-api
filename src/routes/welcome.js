@@ -7,7 +7,7 @@ export default async function welcome(fastify) {
     reply.code(200).send({
       resources: {
         myths: "/api/myths?lang={lang}",
-        mythById: "/api/:id?lang={lang}",
+        mythById: "/api/myths/:id?lang={lang}",
         supportedLanguages: "/api/languages",
       },
     });

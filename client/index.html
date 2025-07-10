@@ -94,7 +94,9 @@
           "<center><mark>Obteniendo historia principal...</mark></center>";
 
         try {
-          const res = await fetch("/api/myths/1?lang=es");
+          const response = fetch("/api/myths/1?lang=es");
+          const timeout = new Promise((resolve) => setTimeout(resolve, 3000));
+          const [res] = await Promise.all([response, timeout]);
 
           if (!res.ok)
             throw new Error(

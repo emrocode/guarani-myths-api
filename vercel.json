@@ -1,1 +1,16 @@
-{"version":2,"builds":[{"src":"api/index.js","use":"@vercel/node"},{"src":"client/**","use":"@vercel/static"}],"routes":[{"src":"/api/(.*)","dest":"/api/index.js"},{"src":"/assets/(.*\\.(png|jpg|jpeg|webp|svg))","dest":"/client/assets/$1","headers":{"Cache-Control":"public, max-age=31536000, immutable"}},{"src":"/","dest":"/client/index.html"}]}
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.js", "use": "@vercel/node" },
+    { "src": "client/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.js" },
+    {
+      "src": "/assets/(.*\\.(css|js|png|jpg|jpeg|webp|svg))",
+      "dest": "/client/assets/$1",
+      "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
+    },
+    { "src": "/", "dest": "/client/index.html" }
+  ]
+}

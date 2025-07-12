@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mitos Guaraníes</title>
+    <title>Mitos Guaraníes: API &dash; Emilio Romero</title>
     <meta
       name="description"
       content="Explora la mitología Guaraní: API con los siete monstruos legendarios, su historia e imágenes."
     />
-    <link rel="shortcut icon" href="/assets/gmyths.png" type="image/png" />
     <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link rel="stylesheet" href="./assets/globals.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
@@ -26,9 +26,6 @@
   <body>
     <header>
       <center>
-        <figure>
-          <img src="/assets/gmyths.png" alt="Guarani Myths API Logo" />
-        </figure>
         <h1>Mitos Guaraníes</h1>
         <p>
           Explora la mitología Guaraní a través de esta API. Accede a los siete
@@ -38,7 +35,7 @@
     </header>
     <main>
       <blockquote id="element"></blockquote>
-      <h3>Para empezar</h3>
+      <h2>Para empezar</h2>
       <p>
         La url base contiene información sobre todos los recursos disponibles de
         la API. Todas las peticiones son <code>GET</code> y van sobre
@@ -51,7 +48,7 @@
           >https://warani.vercel.app/api</a
         >
       </p>
-      <h3>Contribuir al proyecto</h3>
+      <h2>Contribuir al proyecto</h2>
       <p>
         Si tienes alguna sugerencia que podría mejorar el proyecto, por favor
         haz un <strong>fork</strong> del
@@ -64,27 +61,17 @@
         y crea una <strong>pull_request</strong> o puedes simplemente abrir una
         <strong>issue</strong> con la etiqueta «enhancement».
       </p>
-      <p>
-        <strong>¡Gracias a todos los colaboradores!</strong>
-      </p>
-      <figure>
-        <img
-          style="margin-inline: 0"
-          src="https://contrib.rocks/image?repo=emrocode/guarani-myths-api&max=500&columns=20"
-          alt=""
-        />
-      </figure>
     </main>
+    <hr />
     <footer>
       <p>
-        <code>Guaraní Myths API</code> es un proyecto de
+        Hecho con ❤️ por
         <a
           href="https://github.com/emrocode"
           target="_blank"
           rel="noopener noreferrer"
           >Emilio Romero</a
         >
-        y está bajo la licencia MIT.
       </p>
     </footer>
     <script>
@@ -107,14 +94,14 @@
           containerEl.innerHTML = "";
           containerEl.innerHTML = `
             <center>
-              <img style="aspect-ratio: 1 / 0.5; object-fit: cover; object-position: top;" src=${data.image} />
+              <img src=${data.image} />
             </center>
             <h3>${data.title}</h3>
             <p>${data.description}</p>
           `;
         } catch (error) {
           console.error(error);
-          containerEl.innerHTML = `<center><mark style="background-color: red !important;">${error.message}</mark></center>`;
+          containerEl.innerHTML = `<center><mark class="error">${error.message}</mark></center>`;
         }
       })();
     </script>

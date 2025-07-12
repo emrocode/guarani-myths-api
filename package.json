@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node api/index.ts",
     "format": "prettier src/* --write",
-    "format:client": "prettier client/* --write"
+    "format:client": "prettier client/index.html --write"
   },
   "keywords": [],
   "author": "Emilio Romero <emrocode@gmail.com>",

@@ -18,7 +18,7 @@ export default async function meta(fastify) {
 
       reply.code(200).send(meta);
     } catch (error) {
-      req.log.error(err);
+      req.log.error(error);
       reply
         .code(500)
         .send({ error: "Internal error while retrieving metadata" });

@@ -8,7 +8,7 @@ La url base contiene información sobre todos los recursos disponibles de la API
 
 - Base url: https://warani.vercel.app/api
 
-### Ejemplo de uso
+### Ejemplo
 
 ```js
 fetch("https://warani.vercel.app/api/myths/1?lang=es")
@@ -21,7 +21,7 @@ fetch("https://warani.vercel.app/api/myths/1?lang=es")
 ```json
 {
   "id": 1,
-  "name": "Taú and Keraná",
+  "name": "Taú y Keraná",
   "description": "Taú era un espíritu maléfico que...",
   "image": "https://warani.vercel.app/images/..."
 }

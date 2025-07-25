@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mitos Guaraníes: API &dash; Emilio Romero</title>
+    <title>Mitos Guaraníes: API</title>
     <meta
       name="description"
       content="Explora la mitología Guaraní: API con los siete monstruos legendarios, su historia e imágenes."
@@ -31,7 +31,7 @@
         monstruos legendarios, su historia resumida e imágenes relacionadas.
       </p>
       <hr />
-      <blockquote id="element"></blockquote>
+      <blockquote id="m"></blockquote>
       <hr />
       <h2>Para empezar</h2>
       <p>
@@ -64,7 +64,7 @@
     <hr />
     <footer>
       <p>
-        Hecho con ❤️ por
+        Creado por
         <a
           href="https://github.com/emrocode"
           target="_blank"
@@ -75,7 +75,7 @@
     </footer>
     <script>
       (async function fetchMyths() {
-        const containerEl = document.getElementById("element");
+        const containerEl = document.getElementById("m");
         containerEl.innerHTML =
           "<center><mark>Obteniendo historia principal...</mark></center>";
 
@@ -93,7 +93,7 @@
           containerEl.innerHTML = "";
           containerEl.innerHTML = `
             <center>
-              <img src=${data.image} />
+              <img alt="Imagen de ${data.title}" src=${data.image} />
             </center>
             <h3>${data.title}</h3>
             <p>${data.description}</p>
